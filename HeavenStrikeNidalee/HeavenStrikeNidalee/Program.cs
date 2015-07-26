@@ -138,7 +138,6 @@ namespace HeavenStrikeNidalee
         {
             if (!sender.IsMe) return;
             var spell = args.SData;
-            Game.Say(spell.Name);
             if (spell.Name == "Swipe")
             {
                 ecougarcount = Utils.GameTimeTickCount;
