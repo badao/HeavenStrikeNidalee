@@ -264,7 +264,7 @@ namespace HeavenStrikeNidalee
             }
             if (Orbwalker.ActiveMode == Orbwalking.OrbwalkingMode.Combo && CougarForm)
             {
-                if (Orbwalker.GetTarget() != null && Orbwalker.GetTarget().Health <= Qcougardamage(Orbwalker.GetTarget()) && Q.IsReady())
+                if (Orbwalker.GetTarget() != null && Orbwalker.GetTarget().Health <= Qcougardamage(Orbwalker.GetTarget()) + Shendamage(Orbwalker.GetTarget()) + Wcougardamage(Orbwalker.GetTarget()) + Ecougardamage(Orbwalker.GetTarget()) && Q.IsReady())
                     Q.Cast();
             }
         }
