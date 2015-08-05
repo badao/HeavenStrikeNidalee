@@ -46,7 +46,7 @@ namespace HeavenStrikeNidalee
             E2 = new Spell(SpellSlot.E);
             R2 = new Spell(SpellSlot.R);
 
-            Q.SetSkillshot(0.125f, 40, 1300, true, SkillshotType.SkillshotLine);
+            Q.SetSkillshot(0.25f, 40, 1300, true, SkillshotType.SkillshotLine);
             Q.MinHitChance = HitChance.Medium;
 
 
@@ -575,7 +575,7 @@ namespace HeavenStrikeNidalee
         }
         private static double Qhumandamage(AttackableUnit target)
         {
-                var raw =  new double[] { 50, 75, 100, 125, 150 }[Q.Instance.Level - 1 ]
+                var raw =  new double[] { 50, 70, 90, 110, 130 }[Q.Instance.Level - 1 ]
                                     + 0.4 * Player.FlatMagicDamageMod;
                 return QhumanReady ? (Player.Distance(target.Position) < 525 ?
                     Player.CalcDamage(target as Obj_AI_Base, Damage.DamageType.Magical, raw) :
