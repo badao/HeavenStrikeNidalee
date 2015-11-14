@@ -612,8 +612,7 @@ namespace HeavenStrikeNidalee
         {
             if (ItemData.Lich_Bane.GetItem().IsReady())
                 return Player.CalcDamage(target as Obj_AI_Base, Damage.DamageType.Magical, 1.75 * Player.BaseAttackDamage + 0.5 * Player.FlatMagicDamageMod);
-            if (ItemData.Poachers_Knife_Enchantment_Magus.GetItem().IsReady() || ItemData.Rangers_Trailblazer_Enchantment_Magus.GetItem().IsReady()
-                || ItemData.Skirmishers_Sabre_Enchantment_Magus.GetItem().IsReady() || ItemData.Stalkers_Blade_Enchantment_Magus.GetItem().IsReady())
+            if (GetItem(1402).IsReady() || GetItem(1410).IsReady() || GetItem(1414).IsReady())
                 return Player.CalcDamage(target as Obj_AI_Base, Damage.DamageType.Magical, 2 * Player.BaseAttackDamage + 0.3 * Player.FlatMagicDamageMod);
             if (ItemData.Trinity_Force.GetItem().IsReady())
                 return Player.CalcDamage(target as Obj_AI_Base, Damage.DamageType.Physical, 3 * Player.BaseAttackDamage);
@@ -631,6 +630,10 @@ namespace HeavenStrikeNidalee
                 temp += (buff.Name + "(" + buff.Count + ")" + "(" + buff.Type.ToString() + ")" + ", ");
             }
             Game.Say(temp);
+        }
+        public static Items.Item GetItem(int Id, float Range = 0)
+        {
+            return new Items.Item(Id, Range);
         }
     }
 }
